@@ -35,7 +35,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>${mainClass}</mainClass>
+							<mainClass>core.Selenium</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>

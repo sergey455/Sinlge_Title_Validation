@@ -6,12 +6,21 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  
 public class Selenium {
 	public static void main(String[] args) {
- 
+		
+		if (args.length == 0) {
+			System.err.println("No arguments!");
+			System.exit(2);
+		}
 		WebDriver driver = new FirefoxDriver();    // Version 1.1 :: Firefox
  
 		String text_case_id = "TC-001.01";
-		String url = "http://www.learn2test.net";
-		String title_expected = "learn2test.net";
+		//String url = "http://www.learn2test.net";
+		//String title_expected = "learn2test.net";
+		
+		String param[] = args[0].split("\\|");
+		
+		String url = param[0];
+		String title_expected = param[1];
 		
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
